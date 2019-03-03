@@ -105,6 +105,7 @@ namespace Uber_Rider.Activities
         private void TaskCompletionListener_Success(object sender, EventArgs e)
         {
             StartActivity(typeof(MainActivity));
+            Finish();
         }
     }
 }
