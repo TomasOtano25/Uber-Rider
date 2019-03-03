@@ -108,7 +108,7 @@ namespace Uber_Rider.Activities
             }
             else if (string.IsNullOrEmpty(password) || password.Length < 8)
             {
-                Snackbar.Make(rootView, "Please enter a passwod upto 8 characters.", Snackbar.LengthShort).Show();
+                Snackbar.Make(rootView, "Please enter a password upto 8 characters.", Snackbar.LengthShort).Show();
                 return;
             }
 

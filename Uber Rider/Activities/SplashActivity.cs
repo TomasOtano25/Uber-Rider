@@ -17,7 +17,7 @@
         protected override void OnResume()
         {
             base.OnResume();
-            StartActivity(typeof(RegisterationActivity));
+            StartActivity(typeof(LoginActivity));
         }
     }
 }
