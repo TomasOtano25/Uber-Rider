@@ -4136,6 +4136,9 @@ namespace Uber_Rider
 			// aapt resource value: 0x7f0c0181
 			public const int MyTheme_Splash = 2131493249;
 			
+			// aapt resource value: 0x7f0c0183
+			public const int NavigationStyle = 2131493251;
+			
 			// aapt resource value: 0x7f0c001e
 			public const int Platform_AppCompat = 2131492894;
 			
