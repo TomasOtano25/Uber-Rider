@@ -13,29 +13,21 @@ namespace Uber_Rider
     public class MainActivity : AppCompatActivity
     {
         FirebaseDatabase database;
-        Button btntestConnection;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+            // Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
-
-            btntestConnection = (Button)FindViewById(Resource.Id.mybutton);
-            btntestConnection.Click += BtntestConnection_Click;
         }
 
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
+        /*public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-        }
-
-        private void BtntestConnection_Click(object sender, EventArgs e)
-        {
-            this.InitializeDatabase();
-        }
+        }*/
 
         void InitializeDatabase()
         {

@@ -11,4 +11,6 @@
     <color name="uberAccentColor">#EE861F</color>
     <color name="uberPrimaryDark">#102A38</color>
     <color name="uberAccentClick">#A25508</color>
+
+    <color name="uberAsh">#E2E2E2</color>
 </resources>
