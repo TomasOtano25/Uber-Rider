@@ -7,11 +7,11 @@
   <!--fill_parent/wrap_content-->
   <item>
     <bitmap
-      android:src="@drawable/logo"
+      android:src="@drawable/cover"
       android:scaleType="matrix"
-      android:layout_height="20dp"
-      android:layout_width="40dp"
-      android:tileMode="disabled"
+      android:layout_height="fill_parent"
+      android:layout_width="fill_parent"
+      android:tileMode="disabled" 
     />
   </item>
 
