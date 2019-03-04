@@ -3,4 +3,6 @@
     <string name="action_settings">Settings</string>
   <string name="click_here">Not Registered, Click to Register</string>
   <string name="click_login">Register already, Click to Login</string>
+
+  <string name="mapkey">AIzaSyAvSh4bUh389UBQRCig5Uxd8IfjNJ6yzLs</string>
 </resources>

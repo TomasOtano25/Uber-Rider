@@ -7,32 +7,39 @@ using System;
 using Firebase;
 using Firebase.Database;
 using Android.Views;
+using Android.Gms.Maps;
 
 namespace Uber_Rider
 {
     [Activity(Label = "@string/app_name", Theme = "@style/UberTheme", MainLauncher = false)]
-    public class MainActivity : AppCompatActivity
+    public class MainActivity : AppCompatActivity, IOnMapReadyCallback
     {
         FirebaseDatabase database;
         Android.Support.V7.Widget.Toolbar mainToolbar;
         Android.Support.V4.Widget.DrawerLayout drawerLayout;
 
+        GoogleMap mainMap;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            // Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+
+            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
             ConnectControl();
+
+            SupportMapFragment mapFragment = (SupportMapFragment)SupportFragmentManager.FindFragmentById(Resource.Id.map);
+            mapFragment.GetMapAsync(this);
         }
 
-        /*public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-        }*/
+        }
 
         void ConnectControl()
         {
@@ -82,6 +89,11 @@ namespace Uber_Rider
             dbref.SetValue("Ticket1");
 
             Toast.MakeText(this, "Completed", ToastLength.Short).Show();
+        }
+
+        public void OnMapReady(GoogleMap googleMap)
+        {
+            mainMap = googleMap;
         }
     }
 }
