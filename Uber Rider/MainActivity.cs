@@ -8,6 +8,7 @@ using Firebase;
 using Firebase.Database;
 using Android.Views;
 using Android.Gms.Maps;
+using Android.Gms.Maps.Model;
 
 namespace Uber_Rider
 {
@@ -93,6 +94,14 @@ namespace Uber_Rider
 
         public void OnMapReady(GoogleMap googleMap)
         {
+            try
+            {
+                bool success = googleMap.SetMapStyle(MapStyleOptions.LoadRawResourceStyle(this, Resource.Raw.silvermapstyle));
+            }
+            catch (Exception)
+            {
+                throw;
+            }
             mainMap = googleMap;
         }
     }
