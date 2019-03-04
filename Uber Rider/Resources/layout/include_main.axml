@@ -8,14 +8,12 @@
 		android:layout_height="fill_parent"
 		android:layout_width="fill_parent"
 		android:background="@color/uberAsh">
-	
-		<TextView
+
+		<android.support.v7.widget.Toolbar 
+			android:id="@+id/mainToolbar"
 			android:layout_height="wrap_content"
 			android:layout_width="match_parent"
-			android:text="Main Layout"
-			android:gravity="center"
-			android:textSize="20sp"
-			android:layout_gravity="center"
+			android:minHeight="?android:attr/actionBarSize"
 		/>
 
 	</FrameLayout>

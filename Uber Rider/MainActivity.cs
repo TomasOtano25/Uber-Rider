@@ -6,13 +6,16 @@ using Android.Widget;
 using System;
 using Firebase;
 using Firebase.Database;
+using Android.Views;
 
 namespace Uber_Rider
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = false)]
+    [Activity(Label = "@string/app_name", Theme = "@style/UberTheme", MainLauncher = false)]
     public class MainActivity : AppCompatActivity
     {
         FirebaseDatabase database;
+        Android.Support.V7.Widget.Toolbar mainToolbar;
+        Android.Support.V4.Widget.DrawerLayout drawerLayout;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -20,6 +23,8 @@ namespace Uber_Rider
             // Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
+
+            ConnectControl();
         }
 
         /*public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
@@ -28,6 +33,30 @@ namespace Uber_Rider
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }*/
+
+        void ConnectControl()
+        {
+            drawerLayout = (Android.Support.V4.Widget.DrawerLayout)FindViewById(Resource.Id.drawerLayout);
+
+            mainToolbar = (Android.Support.V7.Widget.Toolbar)FindViewById(Resource.Id.mainToolbar);
+            SetSupportActionBar(mainToolbar);
+            SupportActionBar.Title = "";
+            Android.Support.V7.App.ActionBar actionBar = SupportActionBar;
+            actionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu_action);
+            actionBar.SetDisplayHomeAsUpEnabled(true);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Android.Resource.Id.Home:
+                    drawerLayout.OpenDrawer((int)GravityFlags.Left);
+                    return true;
+                default:
+                    return base.OnOptionsItemSelected(item);
+            }
+        }
 
         void InitializeDatabase()
         {
