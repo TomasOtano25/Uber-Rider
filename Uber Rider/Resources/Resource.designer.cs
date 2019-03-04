@@ -2383,26 +2383,26 @@ namespace Uber_Rider
 			// aapt resource value: 0x7f020054
 			public const int avd_hide_password = 2130837588;
 			
-			// aapt resource value: 0x7f020087
-			public const int avd_hide_password_1 = 2130837639;
-			
-			// aapt resource value: 0x7f020088
-			public const int avd_hide_password_2 = 2130837640;
-			
 			// aapt resource value: 0x7f020089
-			public const int avd_hide_password_3 = 2130837641;
+			public const int avd_hide_password_1 = 2130837641;
+			
+			// aapt resource value: 0x7f02008a
+			public const int avd_hide_password_2 = 2130837642;
+			
+			// aapt resource value: 0x7f02008b
+			public const int avd_hide_password_3 = 2130837643;
 			
 			// aapt resource value: 0x7f020055
 			public const int avd_show_password = 2130837589;
 			
-			// aapt resource value: 0x7f02008a
-			public const int avd_show_password_1 = 2130837642;
-			
-			// aapt resource value: 0x7f02008b
-			public const int avd_show_password_2 = 2130837643;
-			
 			// aapt resource value: 0x7f02008c
-			public const int avd_show_password_3 = 2130837644;
+			public const int avd_show_password_1 = 2130837644;
+			
+			// aapt resource value: 0x7f02008d
+			public const int avd_show_password_2 = 2130837645;
+			
+			// aapt resource value: 0x7f02008e
+			public const int avd_show_password_3 = 2130837646;
 			
 			// aapt resource value: 0x7f020056
 			public const int common_full_open_on_phone = 2130837590;
@@ -2492,64 +2492,70 @@ namespace Uber_Rider
 			public const int greenball = 2130837618;
 			
 			// aapt resource value: 0x7f020073
-			public const int logo = 2130837619;
+			public const int greenmarker = 2130837619;
 			
 			// aapt resource value: 0x7f020074
-			public const int navigation_empty_icon = 2130837620;
+			public const int logo = 2130837620;
 			
 			// aapt resource value: 0x7f020075
-			public const int notification_action_background = 2130837621;
+			public const int navigation_empty_icon = 2130837621;
 			
 			// aapt resource value: 0x7f020076
-			public const int notification_bg = 2130837622;
+			public const int notification_action_background = 2130837622;
 			
 			// aapt resource value: 0x7f020077
-			public const int notification_bg_low = 2130837623;
+			public const int notification_bg = 2130837623;
 			
 			// aapt resource value: 0x7f020078
-			public const int notification_bg_low_normal = 2130837624;
+			public const int notification_bg_low = 2130837624;
 			
 			// aapt resource value: 0x7f020079
-			public const int notification_bg_low_pressed = 2130837625;
+			public const int notification_bg_low_normal = 2130837625;
 			
 			// aapt resource value: 0x7f02007a
-			public const int notification_bg_normal = 2130837626;
+			public const int notification_bg_low_pressed = 2130837626;
 			
 			// aapt resource value: 0x7f02007b
-			public const int notification_bg_normal_pressed = 2130837627;
+			public const int notification_bg_normal = 2130837627;
 			
 			// aapt resource value: 0x7f02007c
-			public const int notification_icon_background = 2130837628;
-			
-			// aapt resource value: 0x7f020085
-			public const int notification_template_icon_bg = 2130837637;
-			
-			// aapt resource value: 0x7f020086
-			public const int notification_template_icon_low_bg = 2130837638;
+			public const int notification_bg_normal_pressed = 2130837628;
 			
 			// aapt resource value: 0x7f02007d
-			public const int notification_tile_bg = 2130837629;
+			public const int notification_icon_background = 2130837629;
+			
+			// aapt resource value: 0x7f020087
+			public const int notification_template_icon_bg = 2130837639;
+			
+			// aapt resource value: 0x7f020088
+			public const int notification_template_icon_low_bg = 2130837640;
 			
 			// aapt resource value: 0x7f02007e
-			public const int notify_panel_notification_icon_bg = 2130837630;
+			public const int notification_tile_bg = 2130837630;
 			
 			// aapt resource value: 0x7f02007f
-			public const int redball = 2130837631;
+			public const int notify_panel_notification_icon_bg = 2130837631;
 			
 			// aapt resource value: 0x7f020080
-			public const int roundedges = 2130837632;
+			public const int redball = 2130837632;
 			
 			// aapt resource value: 0x7f020081
-			public const int splash = 2130837633;
+			public const int redmarker = 2130837633;
 			
 			// aapt resource value: 0x7f020082
-			public const int tooltip_frame_dark = 2130837634;
+			public const int roundedges = 2130837634;
 			
 			// aapt resource value: 0x7f020083
-			public const int tooltip_frame_light = 2130837635;
+			public const int splash = 2130837635;
 			
 			// aapt resource value: 0x7f020084
-			public const int uberroundButton = 2130837636;
+			public const int tooltip_frame_dark = 2130837636;
+			
+			// aapt resource value: 0x7f020085
+			public const int tooltip_frame_light = 2130837637;
+			
+			// aapt resource value: 0x7f020086
+			public const int uberroundButton = 2130837638;
 			
 			static Drawable()
 			{
@@ -2588,8 +2594,8 @@ namespace Uber_Rider
 			// aapt resource value: 0x7f0c00a6
 			public const int accountTitle = 2131493030;
 			
-			// aapt resource value: 0x7f0c00bb
-			public const int action0 = 2131493051;
+			// aapt resource value: 0x7f0c00bc
+			public const int action0 = 2131493052;
 			
 			// aapt resource value: 0x7f0c0086
 			public const int action_bar = 2131492998;
@@ -2612,17 +2618,17 @@ namespace Uber_Rider
 			// aapt resource value: 0x7f0c0064
 			public const int action_bar_title = 2131492964;
 			
-			// aapt resource value: 0x7f0c00b8
-			public const int action_container = 2131493048;
+			// aapt resource value: 0x7f0c00b9
+			public const int action_container = 2131493049;
 			
 			// aapt resource value: 0x7f0c0087
 			public const int action_context_bar = 2131492999;
 			
-			// aapt resource value: 0x7f0c00bf
-			public const int action_divider = 2131493055;
+			// aapt resource value: 0x7f0c00c0
+			public const int action_divider = 2131493056;
 			
-			// aapt resource value: 0x7f0c00b9
-			public const int action_image = 2131493049;
+			// aapt resource value: 0x7f0c00ba
+			public const int action_image = 2131493050;
 			
 			// aapt resource value: 0x7f0c0003
 			public const int action_menu_divider = 2131492867;
@@ -2639,11 +2645,11 @@ namespace Uber_Rider
 			// aapt resource value: 0x7f0c0066
 			public const int action_mode_close_button = 2131492966;
 			
-			// aapt resource value: 0x7f0c00ba
-			public const int action_text = 2131493050;
+			// aapt resource value: 0x7f0c00bb
+			public const int action_text = 2131493051;
 			
-			// aapt resource value: 0x7f0c00c8
-			public const int actions = 2131493064;
+			// aapt resource value: 0x7f0c00c9
+			public const int actions = 2131493065;
 			
 			// aapt resource value: 0x7f0c0067
 			public const int activity_chooser_view_content = 2131492967;
@@ -2684,11 +2690,14 @@ namespace Uber_Rider
 			// aapt resource value: 0x7f0c006d
 			public const int buttonPanel = 2131492973;
 			
-			// aapt resource value: 0x7f0c00bc
-			public const int cancel_action = 2131493052;
+			// aapt resource value: 0x7f0c00bd
+			public const int cancel_action = 2131493053;
 			
 			// aapt resource value: 0x7f0c004f
 			public const int center = 2131492943;
+			
+			// aapt resource value: 0x7f0c00b1
+			public const int centerMarker = 2131493041;
 			
 			// aapt resource value: 0x7f0c0050
 			public const int center_horizontal = 2131492944;
@@ -2699,17 +2708,17 @@ namespace Uber_Rider
 			// aapt resource value: 0x7f0c007d
 			public const int checkbox = 2131492989;
 			
-			// aapt resource value: 0x7f0c00c4
-			public const int chronometer = 2131493060;
+			// aapt resource value: 0x7f0c00c5
+			public const int chronometer = 2131493061;
 			
-			// aapt resource value: 0x7f0c00b3
-			public const int cicleImageView = 2131493043;
+			// aapt resource value: 0x7f0c00b4
+			public const int cicleImageView = 2131493044;
 			
-			// aapt resource value: 0x7f0c00ce
-			public const int clickToLoginText = 2131493070;
+			// aapt resource value: 0x7f0c00cf
+			public const int clickToLoginText = 2131493071;
 			
-			// aapt resource value: 0x7f0c00b7
-			public const int clickToRegisterText = 2131493047;
+			// aapt resource value: 0x7f0c00b8
+			public const int clickToRegisterText = 2131493048;
 			
 			// aapt resource value: 0x7f0c0058
 			public const int clip_horizontal = 2131492952;
@@ -2774,14 +2783,14 @@ namespace Uber_Rider
 			// aapt resource value: 0x7f0c0088
 			public const int edit_query = 2131493000;
 			
-			// aapt resource value: 0x7f0c00b4
-			public const int emailText = 2131493044;
+			// aapt resource value: 0x7f0c00b5
+			public const int emailText = 2131493045;
 			
 			// aapt resource value: 0x7f0c003b
 			public const int end = 2131492923;
 			
-			// aapt resource value: 0x7f0c00ca
-			public const int end_padder = 2131493066;
+			// aapt resource value: 0x7f0c00cb
+			public const int end_padder = 2131493067;
 			
 			// aapt resource value: 0x7f0c004a
 			public const int enterAlways = 2131492938;
@@ -2798,8 +2807,8 @@ namespace Uber_Rider
 			// aapt resource value: 0x7f0c007c
 			public const int expanded_menu = 2131492988;
 			
-			// aapt resource value: 0x7f0c00b2
-			public const int favouritePlacesButton = 2131493042;
+			// aapt resource value: 0x7f0c00b3
+			public const int favouritePlacesButton = 2131493043;
 			
 			// aapt resource value: 0x7f0c005a
 			public const int fill = 2131492954;
@@ -2819,8 +2828,8 @@ namespace Uber_Rider
 			// aapt resource value: 0x7f0c00aa
 			public const int frameLocations = 2131493034;
 			
-			// aapt resource value: 0x7f0c00cb
-			public const int fullNameText = 2131493067;
+			// aapt resource value: 0x7f0c00cc
+			public const int fullNameText = 2131493068;
 			
 			// aapt resource value: 0x7f0c000a
 			public const int ghost_view = 2131492874;
@@ -2837,8 +2846,8 @@ namespace Uber_Rider
 			// aapt resource value: 0x7f0c006c
 			public const int icon = 2131492972;
 			
-			// aapt resource value: 0x7f0c00c9
-			public const int icon_group = 2131493065;
+			// aapt resource value: 0x7f0c00ca
+			public const int icon_group = 2131493066;
 			
 			// aapt resource value: 0x7f0c0024
 			public const int icon_only = 2131492900;
@@ -2849,8 +2858,8 @@ namespace Uber_Rider
 			// aapt resource value: 0x7f0c0069
 			public const int image = 2131492969;
 			
-			// aapt resource value: 0x7f0c00c5
-			public const int info = 2131493061;
+			// aapt resource value: 0x7f0c00c6
+			public const int info = 2131493062;
 			
 			// aapt resource value: 0x7f0c0063
 			public const int italic = 2131492963;
@@ -2885,8 +2894,8 @@ namespace Uber_Rider
 			// aapt resource value: 0x7f0c006b
 			public const int list_item = 2131492971;
 			
-			// aapt resource value: 0x7f0c00b6
-			public const int loginButton = 2131493046;
+			// aapt resource value: 0x7f0c00b7
+			public const int loginButton = 2131493047;
 			
 			// aapt resource value: 0x7f0c00a9
 			public const int mainToolbar = 2131493033;
@@ -2894,14 +2903,14 @@ namespace Uber_Rider
 			// aapt resource value: 0x7f0c00a8
 			public const int map = 2131493032;
 			
-			// aapt resource value: 0x7f0c00d1
-			public const int masked = 2131493073;
+			// aapt resource value: 0x7f0c00d2
+			public const int masked = 2131493074;
 			
-			// aapt resource value: 0x7f0c00be
-			public const int media_actions = 2131493054;
+			// aapt resource value: 0x7f0c00bf
+			public const int media_actions = 2131493055;
 			
-			// aapt resource value: 0x7f0c00cf
-			public const int message = 2131493071;
+			// aapt resource value: 0x7f0c00d0
+			public const int message = 2131493072;
 			
 			// aapt resource value: 0x7f0c003c
 			public const int middle = 2131492924;
@@ -2912,26 +2921,26 @@ namespace Uber_Rider
 			// aapt resource value: 0x7f0c0033
 			public const int multiply = 2131492915;
 			
-			// aapt resource value: 0x7f0c00b1
-			public const int mylocation = 2131493041;
+			// aapt resource value: 0x7f0c00b2
+			public const int mylocation = 2131493042;
+			
+			// aapt resource value: 0x7f0c00d8
+			public const int navAbout = 2131493080;
 			
 			// aapt resource value: 0x7f0c00d7
-			public const int navAbout = 2131493079;
-			
-			// aapt resource value: 0x7f0c00d6
-			public const int navHelp = 2131493078;
-			
-			// aapt resource value: 0x7f0c00d4
-			public const int navHistory = 2131493076;
-			
-			// aapt resource value: 0x7f0c00d3
-			public const int navPayments = 2131493075;
-			
-			// aapt resource value: 0x7f0c00d2
-			public const int navProfile = 2131493074;
+			public const int navHelp = 2131493079;
 			
 			// aapt resource value: 0x7f0c00d5
-			public const int navPromo = 2131493077;
+			public const int navHistory = 2131493077;
+			
+			// aapt resource value: 0x7f0c00d4
+			public const int navPayments = 2131493076;
+			
+			// aapt resource value: 0x7f0c00d3
+			public const int navProfile = 2131493075;
+			
+			// aapt resource value: 0x7f0c00d6
+			public const int navPromo = 2131493078;
 			
 			// aapt resource value: 0x7f0c0096
 			public const int navView = 2131493014;
@@ -2948,14 +2957,14 @@ namespace Uber_Rider
 			// aapt resource value: 0x7f0c001f
 			public const int normal = 2131492895;
 			
-			// aapt resource value: 0x7f0c00c7
-			public const int notification_background = 2131493063;
+			// aapt resource value: 0x7f0c00c8
+			public const int notification_background = 2131493064;
+			
+			// aapt resource value: 0x7f0c00c2
+			public const int notification_main_column = 2131493058;
 			
 			// aapt resource value: 0x7f0c00c1
-			public const int notification_main_column = 2131493057;
-			
-			// aapt resource value: 0x7f0c00c0
-			public const int notification_main_column_container = 2131493056;
+			public const int notification_main_column_container = 2131493057;
 			
 			// aapt resource value: 0x7f0c0056
 			public const int parallax = 2131492950;
@@ -2966,11 +2975,11 @@ namespace Uber_Rider
 			// aapt resource value: 0x7f0c000b
 			public const int parent_matrix = 2131492875;
 			
-			// aapt resource value: 0x7f0c00b5
-			public const int passwordText = 2131493045;
+			// aapt resource value: 0x7f0c00b6
+			public const int passwordText = 2131493046;
 			
-			// aapt resource value: 0x7f0c00cc
-			public const int phoneText = 2131493068;
+			// aapt resource value: 0x7f0c00cd
+			public const int phoneText = 2131493069;
 			
 			// aapt resource value: 0x7f0c00ac
 			public const int pickupLocationText = 2131493036;
@@ -2990,17 +2999,17 @@ namespace Uber_Rider
 			// aapt resource value: 0x7f0c007f
 			public const int radio = 2131492991;
 			
-			// aapt resource value: 0x7f0c00cd
-			public const int registerButton = 2131493069;
+			// aapt resource value: 0x7f0c00ce
+			public const int registerButton = 2131493070;
 			
 			// aapt resource value: 0x7f0c0054
 			public const int right = 2131492948;
 			
-			// aapt resource value: 0x7f0c00c6
-			public const int right_icon = 2131493062;
+			// aapt resource value: 0x7f0c00c7
+			public const int right_icon = 2131493063;
 			
-			// aapt resource value: 0x7f0c00c2
-			public const int right_side = 2131493058;
+			// aapt resource value: 0x7f0c00c3
+			public const int right_side = 2131493059;
 			
 			// aapt resource value: 0x7f0c00a7
 			public const int rootView = 2131493031;
@@ -3113,8 +3122,8 @@ namespace Uber_Rider
 			// aapt resource value: 0x7f0c0055
 			public const int start = 2131492949;
 			
-			// aapt resource value: 0x7f0c00bd
-			public const int status_bar_latest_event_content = 2131493053;
+			// aapt resource value: 0x7f0c00be
+			public const int status_bar_latest_event_content = 2131493054;
 			
 			// aapt resource value: 0x7f0c0080
 			public const int submenuarrow = 2131492992;
@@ -3152,8 +3161,8 @@ namespace Uber_Rider
 			// aapt resource value: 0x7f0c0015
 			public const int textinput_error = 2131492885;
 			
-			// aapt resource value: 0x7f0c00c3
-			public const int time = 2131493059;
+			// aapt resource value: 0x7f0c00c4
+			public const int time = 2131493060;
 			
 			// aapt resource value: 0x7f0c001c
 			public const int title = 2131492892;
@@ -3200,8 +3209,8 @@ namespace Uber_Rider
 			// aapt resource value: 0x7f0c0016
 			public const int view_offset_helper = 2131492886;
 			
-			// aapt resource value: 0x7f0c00d0
-			public const int visible = 2131493072;
+			// aapt resource value: 0x7f0c00d1
+			public const int visible = 2131493073;
 			
 			// aapt resource value: 0x7f0c0026
 			public const int wide = 2131492902;
