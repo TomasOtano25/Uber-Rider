@@ -28,6 +28,7 @@ namespace Uber_Rider.Activities
         TextInputLayout passwordText;
         Button registerButton;
         CoordinatorLayout rootView;
+        TextView clickToLoginText;
 
         FirebaseAuth mAuth;
         FirebaseDatabase database;
@@ -79,9 +80,17 @@ namespace Uber_Rider.Activities
             emailText = (TextInputLayout)FindViewById(Resource.Id.emailText);
             passwordText = (TextInputLayout)FindViewById(Resource.Id.passwordText);
             registerButton = (Button)FindViewById(Resource.Id.registerButton);
-            rootView = (CoordinatorLayout)FindViewById(Resource.Id.rootView); 
+            rootView = (CoordinatorLayout)FindViewById(Resource.Id.rootView);
+            clickToLoginText = (TextView)FindViewById(Resource.Id.clickToLoginText);
 
             registerButton.Click += RegisterButton_Click;
+            clickToLoginText.Click += ClickToLoginText_Click;
+        }
+
+        private void ClickToLoginText_Click(object sender, EventArgs e)
+        {
+            StartActivity(typeof(LoginActivity));
+            Finish();
         }
 
         private void RegisterButton_Click(object sender, EventArgs e)

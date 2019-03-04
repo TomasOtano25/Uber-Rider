@@ -88,6 +88,7 @@
 			/>
 
 			<TextView
+				android:id="@+id/clickToRegisterText"
 				android:layout_height="wrap_content"
 				android:layout_width="match_parent"
 				android:gravity="center"
@@ -95,6 +96,7 @@
 				android:layout_below="@+id/loginButton"
 				android:text="@string/click_here"
 				android:clickable="true"
+				
 			/>
 		</RelativeLayout>
 	</LinearLayout>
