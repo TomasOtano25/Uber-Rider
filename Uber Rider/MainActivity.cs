@@ -9,6 +9,9 @@ using Firebase.Database;
 using Android.Views;
 using Android.Gms.Maps;
 using Android.Gms.Maps.Model;
+using Android;
+using Android.Support.V4.App;
+using Android.Content.PM;
 
 namespace Uber_Rider
 {
@@ -21,11 +24,14 @@ namespace Uber_Rider
 
         GoogleMap mainMap;
 
+        private readonly string[] permissionGroupLocation = { Manifest.Permission.AccessCoarseLocation, Manifest.Permission.AccessFineLocation };
+        private const int requestLocationId = 0; 
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
-            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+            //Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
@@ -33,14 +39,16 @@ namespace Uber_Rider
 
             SupportMapFragment mapFragment = (SupportMapFragment)SupportFragmentManager.FindFragmentById(Resource.Id.map);
             mapFragment.GetMapAsync(this);
+
+            CheckLocationPermission();
         }
 
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
+        /*public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-        }
+        }*/
 
         void ConnectControl()
         {
@@ -103,6 +111,37 @@ namespace Uber_Rider
                 throw;
             }
             mainMap = googleMap;
+        }
+
+        bool CheckLocationPermission()
+        {
+            bool permissionGranted = false;
+
+            if (ActivityCompat.CheckSelfPermission(this, Manifest.Permission.AccessFineLocation) != Android.Content.PM.Permission.Granted &&
+                ActivityCompat.CheckSelfPermission(this, Manifest.Permission.AccessCoarseLocation) != Android.Content.PM.Permission.Granted)
+            {
+                permissionGranted = false;
+                RequestPermissions(permissionGroupLocation, requestLocationId);
+            }
+            else
+            {
+                permissionGranted = true;
+            }
+
+           return permissionGranted;
+        }
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
+        {
+            if (grantResults[0] == (int)Android.Content.PM.Permission.Granted)
+            {
+                Toast.MakeText(this, "Permission was granted.", ToastLength.Short).Show();
+            }
+            else
+            {
+                Toast.MakeText(this, "Permission was denied.", ToastLength.Short).Show();
+            }
+            // base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 }
