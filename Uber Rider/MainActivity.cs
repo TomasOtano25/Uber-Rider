@@ -13,6 +13,8 @@ using Android;
 using Android.Support.V4.App;
 using Android.Content.PM;
 using Android.Gms.Location;
+using Uber_Rider.Helpers;
+using System.Threading.Tasks;
 
 namespace Uber_Rider
 {
@@ -23,6 +25,10 @@ namespace Uber_Rider
         Android.Support.V7.Widget.Toolbar mainToolbar;
         Android.Support.V4.Widget.DrawerLayout drawerLayout;
 
+        // Layouts
+
+
+
         GoogleMap mainMap;
 
         readonly string[] permissionGroupLocation = { Manifest.Permission.AccessCoarseLocation, Manifest.Permission.AccessFineLocation };
@@ -31,12 +37,13 @@ namespace Uber_Rider
         LocationRequest mLocationRequest;
         FusedLocationProviderClient locationClient;
         Android.Locations.Location mLastLocation = null;
+        LocationCallbackHelper mLocationCallback;
 
         static readonly int UPDATE_INTERVAL = 5; //5 SECONDS
         static readonly int FASTEST_INTERVAL = 5;
         static readonly int DISPLACEMENT = 3; // 3 meters
 
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected override async void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
@@ -53,7 +60,9 @@ namespace Uber_Rider
 
             CreateLocationRequest();
 
-            GetMyLocation();
+            await GetMyLocation();
+
+            StartLocationUpdates();
         }
 
         /*public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
@@ -141,7 +150,7 @@ namespace Uber_Rider
                 permissionGranted = true;
             }
 
-           return permissionGranted;
+            return permissionGranted;
         }
 
         void CreateLocationRequest()
@@ -152,9 +161,36 @@ namespace Uber_Rider
             mLocationRequest.SetPriority(LocationRequest.PriorityHighAccuracy);
             // mLocationRequest.SetSmallestDisplacement(DISPLACEMENT);
             locationClient = LocationServices.GetFusedLocationProviderClient(this);
+            mLocationCallback = new LocationCallbackHelper();
+
+            mLocationCallback.MyLocation += MLocationCallback_MyLocation;
         }
 
-        async void GetMyLocation()
+        void MLocationCallback_MyLocation(object sender, LocationCallbackHelper.OnLocationCapturedEventArgs e)
+        {
+            mLastLocation = e.Location;
+            LatLng myposition = new LatLng(mLastLocation.Latitude, mLastLocation.Longitude);
+            mainMap.AnimateCamera(CameraUpdateFactory.NewLatLngZoom(myposition, 17));
+        }
+
+        void StartLocationUpdates()
+        {
+            if (CheckLocationPermission())
+            {
+                locationClient.RequestLocationUpdates(mLocationRequest, mLocationCallback, null);
+            }
+
+        }
+
+        void StopLocationUpdates()
+        {
+            if (locationClient != null && mLocationCallback != null)
+            {
+                locationClient.RemoveLocationUpdates(mLocationCallback);
+            }
+        }
+
+        async Task GetMyLocation()
         {
             if (!CheckLocationPermission())
             {

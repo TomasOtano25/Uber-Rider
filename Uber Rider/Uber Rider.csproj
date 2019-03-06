@@ -63,6 +63,7 @@
     <Compile Include="Activities\RegisterationActivity.cs" />
     <Compile Include="Activities\SplashActivity.cs" />
     <Compile Include="EventListeners\TaskCompletionListener.cs" />
+    <Compile Include="Helpers\LocationCallbackHelper.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
