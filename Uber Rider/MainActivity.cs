@@ -12,6 +12,7 @@ using Android.Gms.Maps.Model;
 using Android;
 using Android.Support.V4.App;
 using Android.Content.PM;
+using Android.Gms.Location;
 
 namespace Uber_Rider
 {
@@ -24,14 +25,22 @@ namespace Uber_Rider
 
         GoogleMap mainMap;
 
-        private readonly string[] permissionGroupLocation = { Manifest.Permission.AccessCoarseLocation, Manifest.Permission.AccessFineLocation };
-        private const int requestLocationId = 0; 
+        readonly string[] permissionGroupLocation = { Manifest.Permission.AccessCoarseLocation, Manifest.Permission.AccessFineLocation };
+        const int requestLocationId = 0;
+
+        LocationRequest mLocationRequest;
+        FusedLocationProviderClient locationClient;
+        Android.Locations.Location mLastLocation = null;
+
+        static readonly int UPDATE_INTERVAL = 5; //5 SECONDS
+        static readonly int FASTEST_INTERVAL = 5;
+        static readonly int DISPLACEMENT = 3; // 3 meters
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
-            //Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+            // Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
@@ -41,6 +50,10 @@ namespace Uber_Rider
             mapFragment.GetMapAsync(this);
 
             CheckLocationPermission();
+
+            CreateLocationRequest();
+
+            GetMyLocation();
         }
 
         /*public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
@@ -102,14 +115,14 @@ namespace Uber_Rider
 
         public void OnMapReady(GoogleMap googleMap)
         {
-            try
+            /*try
             {
                 bool success = googleMap.SetMapStyle(MapStyleOptions.LoadRawResourceStyle(this, Resource.Raw.silvermapstyle));
             }
             catch (Exception)
             {
                 throw;
-            }
+            }*/
             mainMap = googleMap;
         }
 
@@ -131,6 +144,31 @@ namespace Uber_Rider
            return permissionGranted;
         }
 
+        void CreateLocationRequest()
+        {
+            mLocationRequest = new LocationRequest();
+            mLocationRequest.SetInterval(UPDATE_INTERVAL);
+            mLocationRequest.SetFastestInterval(FASTEST_INTERVAL);
+            mLocationRequest.SetPriority(LocationRequest.PriorityHighAccuracy);
+            // mLocationRequest.SetSmallestDisplacement(DISPLACEMENT);
+            locationClient = LocationServices.GetFusedLocationProviderClient(this);
+        }
+
+        async void GetMyLocation()
+        {
+            if (!CheckLocationPermission())
+            {
+                return;
+            }
+
+            mLastLocation = await locationClient.GetLastLocationAsync();
+            if (mLastLocation != null)
+            {
+                LatLng myposition = new LatLng(mLastLocation.Latitude, mLastLocation.Longitude);
+                mainMap.MoveCamera(CameraUpdateFactory.NewLatLngZoom(myposition, 17));
+            }
+        }
+
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
         {
             if (grantResults[0] == (int)Android.Content.PM.Permission.Granted)
@@ -141,7 +179,8 @@ namespace Uber_Rider
             {
                 Toast.MakeText(this, "Permission was denied.", ToastLength.Short).Show();
             }
-            // base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
+            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 }
