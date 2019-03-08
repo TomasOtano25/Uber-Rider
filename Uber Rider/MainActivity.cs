@@ -15,6 +15,8 @@ using Android.Content.PM;
 using Android.Gms.Location;
 using Uber_Rider.Helpers;
 using System.Threading.Tasks;
+using Android.Content;
+using Android.Gms.Location.Places.UI;
 
 namespace Uber_Rider
 {
@@ -25,8 +27,13 @@ namespace Uber_Rider
         Android.Support.V7.Widget.Toolbar mainToolbar;
         Android.Support.V4.Widget.DrawerLayout drawerLayout;
 
-        // Layouts
+        // TextViews
+        TextView pickupLocationText;
+        TextView destinationText;
 
+        // Layouts
+        RelativeLayout layoutPickUp;
+        RelativeLayout layoutDestination;
 
 
         GoogleMap mainMap;
@@ -74,14 +81,43 @@ namespace Uber_Rider
 
         void ConnectControl()
         {
+            // DrawerLayout
             drawerLayout = (Android.Support.V4.Widget.DrawerLayout)FindViewById(Resource.Id.drawerLayout);
 
+            // Toolbar
             mainToolbar = (Android.Support.V7.Widget.Toolbar)FindViewById(Resource.Id.mainToolbar);
             SetSupportActionBar(mainToolbar);
             SupportActionBar.Title = "";
             Android.Support.V7.App.ActionBar actionBar = SupportActionBar;
             actionBar.SetHomeAsUpIndicator(Resource.Mipmap.ic_menu_action);
             actionBar.SetDisplayHomeAsUpEnabled(true);
+
+            // TextView
+            pickupLocationText = (TextView)FindViewById(Resource.Id.pickupLocationText);
+            destinationText = (TextView)FindViewById(Resource.Id.destinationText);
+
+            // Layout
+            layoutPickUp = (RelativeLayout)FindViewById(Resource.Id.layoutPickUp);
+            layoutDestination = (RelativeLayout)FindViewById(Resource.Id.layoutDestination);
+
+            layoutPickUp.Click += LayoutPickUp_Click;
+            layoutDestination.Click += LayoutDestination_Click;
+        }
+
+        private void LayoutDestination_Click(object sender, EventArgs e)
+        {
+            Intent intent = new PlaceAutocomplete.IntentBuilder(PlaceAutocomplete.ModeOverlay)
+                .Build(this);   
+
+            StartActivity(intent);
+        }
+
+        private void LayoutPickUp_Click(object sender, EventArgs e)
+        {
+            Intent intent = new PlaceAutocomplete.IntentBuilder(PlaceAutocomplete.ModeFullscreen)
+               .Build(this);
+
+            StartActivityForResult(intent, 1);
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
@@ -216,7 +252,20 @@ namespace Uber_Rider
                 Toast.MakeText(this, "Permission was denied.", ToastLength.Short).Show();
             }
 
-            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            // base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+        protected override void OnActivityResult(int requestCode, [GeneratedEnum] Result resultCode, Intent data)
+        {
+           // base.OnActivityResult(requestCode, resultCode, data);
+
+            if (requestCode == 1)
+            {
+                if (resultCode == Android.App.Result.Ok)
+                {
+                    var place = PlaceAutocomplete.GetPlace(this, data);
+                }
+            }
         }
     }
 }
