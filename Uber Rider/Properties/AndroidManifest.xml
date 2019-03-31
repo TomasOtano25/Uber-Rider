@@ -10,6 +10,19 @@
 
     <meta-data android:name="com.google.android.geo.API_KEY" android:value="@string/mapkey" />
     <meta-data android:name="com.google.android.geo.gms.version" android:value="@integer/google_play_services_version" />
-      
+
+    <activity android:name=".SearchableActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.SEARCH" />
+      </intent-filter>
+      <meta-data android:name="android.app.searchable"
+                 android:resource="@xml/searchable" />
+    </activity>
+    
+    <activity android:name=".MainActivity">
+        <meta-data android:name="android.app.default_searchable"
+                   android:value=".SearchableActivity" />
+    </activity>
+    
   </application>
 </manifest>

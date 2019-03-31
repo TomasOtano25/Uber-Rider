@@ -114,10 +114,11 @@ namespace Uber_Rider
 
         private void LayoutPickUp_Click(object sender, EventArgs e)
         {
-            Intent intent = new PlaceAutocomplete.IntentBuilder(PlaceAutocomplete.ModeFullscreen)
+            /*Intent intent = new PlaceAutocomplete.IntentBuilder(PlaceAutocomplete.ModeFullscreen)
                .Build(this);
 
-            StartActivityForResult(intent, 1);
+            StartActivityForResult(intent, 1);*/
+            OnSearchRequested();
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)

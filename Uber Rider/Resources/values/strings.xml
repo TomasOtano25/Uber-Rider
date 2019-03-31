@@ -4,5 +4,8 @@
   <string name="click_here">Not Registered, Click to Register</string>
   <string name="click_login">Register already, Click to Login</string>
 
+  <string name="app_label">Uber_Rider</string>
+  <string name="search_hint">Search places...</string>
+
   <string name="mapkey">AIzaSyAvSh4bUh389UBQRCig5Uxd8IfjNJ6yzLs</string>
 </resources>
